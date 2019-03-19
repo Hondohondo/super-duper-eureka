@@ -4,6 +4,14 @@ var output;
 // var submitQ;
 var submitE;
 var button;
+var button1;
+var button2;
+var button3;
+
+var count = 1;
+var jibu;
+
+var on = false;
 
 function setup() {
 	// createCanvas(windowWidth, windowHeight);
@@ -11,9 +19,17 @@ function setup() {
 	//textField = createInput("Enter text");
 //createCanvas(710,400);
 //background(200,0,200);
+	greeting = createElement('h2', 'What is the question?');
+	greeting.position(1000,5);
 
 	button = createButton('testQuiz');
-	button.mousePressed(fanyaMambo);
+	button1 = createButton('DELETE');
+	button2 = createButton('JARIBU');
+	button3 = createButton('JIBUUU');
+	button.mousePressed(anFunct);
+	button1.mousePressed(futaStorage);
+	button2.mousePressed(jaribuTena);
+	button3.mousePressed(fanyaMambo);
 	//button = createButton('submit');
  //button.position(300, 400);
 
@@ -63,12 +79,38 @@ function setup() {
 // 	questionAsked.value('');
 // }
 
+function futaStorage() {
+	localStorage.clear();
+}
+
+function jaribuTena() {
 
 
+}
+
+function hesabu() {
+
+var namba = ""
+	button = createButton('hesabuClicks');
+
+
+}
 
 function newTyping() {
 	//output.html(questionAsked.value());
 	//createP(textField.value());
+}
+
+function anFunct() {
+	createP(localStorage.key(0));
+		jibu = createInput("");
+		sawa = createButton('ANSWER');
+		//jibu.hide();
+		//sawa.hide();
+		button.hide();
+		button3.position (sawa.x + sawa.width, 300);
+
+
 }
 
 // function newQuestion() {
@@ -77,19 +119,68 @@ function newTyping() {
 // }
 
 function fanyaMambo() {
-		createP('Mambosawa');
+	createP(localStorage.length);
+	//	createP('Mambosawa');
 
-		for(var i =0; i < localStorage.length; i++){
+	//	var dice = Math.floor(Math.random() * 6) + 1;
 
-			if (i == 1) {
-				createP(localStorage.getItem(localStorage.key(i)));
-			} else {
-				createP(localStorage.getItem(localStorage.key(i)));
-			}
+		//for (var i=0; i < localStorage.length) {}
+		//
+		// if (count == localStorage.length) {
+		// 	count = 0;
+		// }
 
-			// console.log(swali);
-		//	 createP(swali);
-	 }
+		var going = true;
+
+		if (going && count < localStorage.length) {
+		//	createP(localStorage.getItem(localStorage.key(count)));
+		var kurasa = createP(localStorage.key(count));
+
+	//greeting.html(localStorage.key(count));
+			jibu = createInput("");
+			sawa = createButton('ANSWER');
+//			button3.position (sawa.x + sawa.width, 300);
+		//	going = true;
+		count++;
+	} else {
+		createP("QUIZ OVER");
+		button.hide();
+	}
+
+
+
+				if (count < localStorage.length) {
+
+					//createP(localStorage.getItem(localStorage.key(count)));
+
+
+
+					// if (jibu.value() != "") {
+					// 		jibu = createInput("");
+					// 	count++;
+					// }
+				}
+
+//createP(localStorage.getItem(localStorage.key(count)));
+
+				//	count++;
+
+
+
+	//	createP(localStorage.getItem(localStorage.key(dice)));
+
+	 //
+		// for(var i =0; i < localStorage.length; i++){
+	 //
+		// 	if (i == 1) {
+		// 		createP(localStorage.getItem(localStorage.key(i)));
+		// 	} else {
+		// 		createP(localStorage.getItem(localStorage.key(i)));
+		// 	}
+	 //
+		// 	// console.log(swali);
+		// //	 createP(swali);
+	 // }
 
 }
 
@@ -133,7 +224,7 @@ function loadQuestion() {
 // }
 
 function draw() {
-	background(200,0,200);
+	background(200,50,200);
 }
 
 // function mousePressed() {
